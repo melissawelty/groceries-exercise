@@ -119,8 +119,13 @@ print("THERE ARE " + str(department_count) + " DEPARTMENTS:")
 print("--------------") 
 
 unique_departments.sort()
+
 for d in unique_departments:
-    print(d.title())
+    matching_products = [product for product in products if product["department"] == d]
+    matching_products_count = len(matching_products)
+    print(d.title() + " (" + str(matching_products_count) + " products)")
+
+
 
 
 
