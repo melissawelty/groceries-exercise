@@ -99,18 +99,27 @@ departments = []
 
 for product in products:
     #print(product["department"])
-    #departments.append(products["department"])
-    if product["department"] not in departments:
-        departments.append(product["department"])
+    departments.append(product["department"])
+    #if product["department"] not in departments:
+    #   departments.append(product["department"])
 
-department_count = len(departments)
+
+    # conditional logic to only append an item into this empty list departments if
+    #    it doesn't already exist in there 
+    # otherwhise not worry about conditional logic when we append all departments and then remove duplicates 
+        #seen below 
+
+# other option to remove duplicates by set data types 
+unique_departments = list(set(departments))
+
+department_count = len(unique_departments)
 
 print("--------------")
 print("THERE ARE " + str(department_count) + " DEPARTMENTS:")
 print("--------------") 
 
 
-for d in departments:
+for d in unique_departments:
     print(d)
 
 
