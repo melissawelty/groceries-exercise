@@ -20,6 +20,7 @@
 #         products.append(row)
 
 
+import operator
 
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
@@ -93,12 +94,12 @@ print("--------------")
 
 # in class
 
-for x in products:
+sorted_products = sorted(products, key=operator.itemgetter("name"))
+
+
+for x in sorted_products:
     price_usd = to_usd(x["price"])
-    print(f" + {x['name']} ({price_usd})")
-
-
-
+    print(f"+ {x['name']} ({price_usd})")
 
 
 # screencast
@@ -106,8 +107,6 @@ for x in products:
 
 # def sort_by_name(any_product):
 #     return any_product["name"]
-
-# sorted_products = sorted(products, key=sort_by_name)
 
 
 # for product in sorted_products:
