@@ -2,6 +2,25 @@
 
 #from pprint import pprint
 
+
+
+# import csv
+
+# products = []
+
+# csv_filepath = "products.csv" # a relative filepath
+
+# with open(csv_filepath, "r") as csv_file: # "r" means "open the file for reading"
+#     reader = csv.DictReader(csv_file) # assuming your CSV has headers
+#     for row in reader:
+#         # print(type(row), row["id"], row["name"], row["price"])
+#         # print (
+#         #products.append(row) # gives us price values as string
+#         row["price"] = float(row["price"]) #change price from string to row
+#         products.append(row)
+
+
+
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
     {"id":2, "name": "All-Seasons Salt", "department": "pantry", "aisle": "spices seasonings", "price": 4.99},
@@ -53,25 +72,51 @@ products = [
 #  + Sparkling Orange Juice & Prickly Pear Beverage ($2.99)
 
 
-products_count = len(products)
+# dollar sign formatting in numbers 
+def to_usd(my_price):
+    """
+    Converts a numeric value to usd-formatted string, for printing and display purposes.
+    Param: my_price (int or float) like 4000.444444
+    Example: to_usd(4000.444444)
+    Returns: $4,000.44
+    """
+    return f"${my_price:,.2f}" #> $12,000.71
+
+
+
+# products_count = len(products)
 
 
 print("--------------")
-print("THERE ARE " + str(products_count) + " PRODUCTS:")
+print("NUMBER OF PRODUCTS:", len(products))
 print("--------------")
 
+# in class
 
-def sort_by_name(any_product):
-    return any_product["name"]
+for x in products:
+    price_usd = to_usd(x["price"])
+    print(f" + {x['name']} ({price_usd})")
 
-sorted_products = sorted(products, key=sort_by_name)
 
 
-for product in sorted_products:
+
+
+# screencast
+
+
+# def sort_by_name(any_product):
+#     return any_product["name"]
+
+# sorted_products = sorted(products, key=sort_by_name)
+
+
+# for product in sorted_products:
 #     #print(product["name"])
 #    # price_usd = # product["price"]
-    price_usd = " (${0:.2f})".format(product["price"])
-    print("+ " + product["name"] + price_usd)
+#     price_usd = " (${0:.2f})".format(product["price"])
+#     print("+ " + product["name"] + price_usd)
+
+
 
 
 
