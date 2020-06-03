@@ -73,6 +73,17 @@ products = [
 #  + Sparkling Orange Juice & Prickly Pear Beverage ($2.99)
 
 
+
+# example_department_name = "snacks"
+
+# matching_products = [x for x in products if x["department"] == example_department_name]
+
+# print(type(matching_products))
+# print(matching_products)
+
+# exit()
+
+
 # dollar sign formatting in numbers 
 def to_usd(my_price):
     """
@@ -102,18 +113,6 @@ for x in sorted_products:
     print(f"+ {x['name']} ({price_usd})")
 
 
-# screencast
-
-
-# def sort_by_name(any_product):
-#     return any_product["name"]
-
-
-# for product in sorted_products:
-#     #print(product["name"])
-#    # price_usd = # product["price"]
-#     price_usd = " (${0:.2f})".format(product["price"])
-#     print("+ " + product["name"] + price_usd)
 
 
 
@@ -165,7 +164,7 @@ print("--------------")
 unique_departments.sort()
 
 for d in unique_departments:
-    matching_products = [product for product in products if product["department"] == d]
+    matching_products = [product for product in products if product["department"] == d] #list comprehension approach 
     matching_products_count = len(matching_products)
     if matching_products_count > 1:
         label = "products"
